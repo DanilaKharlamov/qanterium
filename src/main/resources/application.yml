@@ -1,0 +1,27 @@
+server:
+  servlet:
+    context-path: /api/qanterium/
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 4024KB
+      max-request-size: 4024KB
+  profiles:
+    active: local
+  application:
+    name: qanterium
+
+swagger.properties:
+  info:
+    title: Qanterium
+    version: 1.0.0
+    description: The main backend service of the qanterium app
+    contact:
+      url: https://www.linkedin.com/in/danilakharlamov/
+      email: danila.kharlamov.v@gmail.com
+      name: Danila Kharlamov
+  servers:
+    - url: http://localhost:8080
+      description: STAGE

@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="db/changelog/1.0.0/changelog-1.0.0-cumulative.xml">
+    <include file="1.0.0-01_create_table_expense_card.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-02_create_table_users.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-03-create_table_member.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-04_create_table_transaction.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-05_create_table_transaction_currency.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-06-create_table_exchange_pair.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-07_create_table_xref_transaction_to_member.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-08_add_records_to_transaction_currency.sql" relativeToChangelogFile="true"/>
+    <include file="1.0.0-09_create_table_transaction_value.sql" relativeToChangelogFile="true"/>
+</databaseChangeLog>

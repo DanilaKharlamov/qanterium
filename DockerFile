@@ -1,0 +1,6 @@
+FROM adoptopenjdk/openjdk17:alpine-jre
+ARG JAR_FILE=build/libs/qanterium-1.0.0.jar
+WORKDIR /app
+EXPOSE 431
+COPY ${JAR_FILE} qanterium.jar
+ENTRYPOINT ["java","-jar","qanterium.jar"]

@@ -1,0 +1,69 @@
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT}
+  file:
+    name: ${LOGGING_FILE_NAME}
+  logback:
+    rollingpolicy:
+      max-file-size: ${LOGGING_LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE}
+      max-history: ${LOGGING_LOGBACK_ROLLINGPOLICY_MAX_HISTORY}
+      total-size-cap: ${LOGGING_LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP}
+
+spring:
+  liquibase:
+    change-log: ${SPRING_LIQUIBASE_CHANGE_LOG}
+    enabled: ${SPRING_LIQUIBASE_ENABLED}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 30000
+      connectionTimeout: 30000
+  jpa:
+    show-sql: ${SPRING_JPA_SHOW_SQL_ENABLED}
+    open-in-view: ${SPRING_JPA_OPEN_IN_VIEW_ENABLED}
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: UTC
+
+qanterium:
+  security:
+    jwt:
+      time-to-live: ${QANTERIUM_SECURITY_JWT_TIME_TO_LIVE}
+  exchange:
+    max-in-memory-size-mb: ${QANTERIUM_EXCHANGE_MAX_IN_MEMORY_SIZE_MB}
+    external-api:
+      url: ${QANTERIUM_EXCHANGE_EXTERNAL_API_URL}
+      api-key: ${QANTERIUM_EXCHANGE_EXTERNAL_API_API_KEY}
+      ssl:
+        trust-store:
+          path: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_TRUSTSTORE_PATH}
+          password: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_TRUSTSTORE_PASSWORD}
+        mutual:
+          enabled: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_MUTUAL_ENABLED}
+          key-store:
+            path: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_MUTUAL_KEYSTORE_PATH}
+            password: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_MUTUAL_KEYSTORE_PASSWORD}
+            secret-key: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_MUTUAL_KEYSTORE_SECRETKEY}
+      protocol: ${QANTERIUM_EXCHANGE_EXTERNAL_API_SSL_PROTOCOL}
+    nbg:
+      url: ${QANTERIUM_EXCHANGE_NBG_URL}
+      ssl:
+        trust-store:
+          path: ${QANTERIUM_EXCHANGE_NBG_SSL_TRUSTSTORE_PATH}
+          password: ${QANTERIUM_EXCHANGE_NBG_SSL_PASSWORD}
+        mutual:
+          enabled: ${QANTERIUM_EXCHANGE_NBG_SSL_MUTUAL_ENABLED}
+          key-store:
+            path: ${QANTERIUM_EXCHANGE_NBG_SSL_MUTUAL_KEYSTORE_PATH}
+            password: ${QANTERIUM_EXCHANGE_NBG_SSL_MUTUAL_KEYSTORE_PASSWORD}
+            secret-key: ${QANTERIUM_EXCHANGE_NBG_SSL_MUTUAL_SECRETKEY}
+      protocol: ${QANTERIUM_EXCHANGE_NBG_SSL_PROTOCOL}
